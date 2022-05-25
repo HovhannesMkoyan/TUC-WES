@@ -1,0 +1,41 @@
+.todos-container {
+    width: 77%;
+    margin-top: 50px;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1DA1F2;
+    padding: 10px 15px;
+    transition: background-color .1s linear;
+    -webkit-transition: background-color .1s linear;
+    -moz-transition: background-color .1s linear;
+    -ms-transition: background-color .1s linear;
+    -o-transition: background-color .1s linear;
+}
+
+.todo-container:hover {
+    background: rgba(29, 161, 242, 0.17);
+}
+
+.todo-container>div:first-child span {
+    margin-left: 10px;
+}
+
+.todo-actions-container {
+    display: flex;
+}
+
+.todo-actions-container svg {
+    display: flex;
+    font-size: 17px;
+    background: rgba(29, 161, 242, 0.17);
+    padding: 7px;
+    cursor: pointer;
+}
+
+.todo-actions-container svg:first-child {
+    margin-right: 6px;
+}
