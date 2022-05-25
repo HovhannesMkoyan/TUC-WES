@@ -1,19 +1,19 @@
+import NewTodo from "./components/NewTodo/NewTodo";
+import Todos from "./components/Todos/Todos";
+import "./App.css";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="container-header">
+          <h1>What is your plan for today?</h1>
+        </div>
+        <div className="container-body">
+          <NewTodo />
+          <Todos />
+        </div>
+      </div>
     </div>
   );
 }
