@@ -27,8 +27,6 @@ export default function NewTodo() {
     }
   };
 
-  console.log(state.todos);
-
   return (
     <div className="newtodo-container">
       <input

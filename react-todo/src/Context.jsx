@@ -15,7 +15,9 @@ export default function Context(props) {
         todos: JSON.parse(todos),
       });
     }
-  }, [state]);
+  }, []);
+
+  console.log("-----1-----", state.todos);
 
   const providerValue = useMemo(() => ({ state, setState }), [state, setState]);
 
