@@ -6,15 +6,15 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { StateContext } from "../../Context";
+import { TodosContext } from "../../TodosContext";
 import "./Todos.css";
 
 export default function Todos() {
-  const { state } = useContext(StateContext);
+  const { todos } = useContext(TodosContext);
 
   return (
     <div className="todos-container">
-      {state.todos.map((todo, index) => (
+      {todos.map((todo, index) => (
         <div key={index} className="todo-container">
           <div>
             <FontAwesomeIcon icon={faSquareFull} size="xs" />
