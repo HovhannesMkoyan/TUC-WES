@@ -22,7 +22,7 @@ export default function NewTodo() {
         ...state,
         todos: state.todos.push(todoObj),
       });
-  
+
       return addTodo(todoObj);
     }
   };
