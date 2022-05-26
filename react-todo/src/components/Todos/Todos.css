@@ -36,6 +36,6 @@
     cursor: pointer;
 }
 
-.todo-actions-container svg:first-child {
-    margin-right: 6px;
+.todo-completed {
+    text-decoration: line-through;
 }

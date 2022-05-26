@@ -48,8 +48,25 @@ export default function TodosProvider(props) {
     localStorage.setItem("todos", JSON.stringify(todosArr));
   };
 
+  const markTodoAsCompleted = (id) => {
+    const todosArr = JSON.parse(todosInLS);
+    const indexOfTodo = todosArr.findIndex((todo) => {
+      return todo.id === id;
+    });
+    todosArr[indexOfTodo].completed = true;
+
+    console.log(todosArr[indexOfTodo]);
+    // Update state
+    setTodos(todosArr);
+
+    // Update LS
+    localStorage.setItem("todos", JSON.stringify(todosArr));
+  };
+
   return (
-    <TodosContext.Provider value={{ todos, setTodos, addTodo, deleteTodo }}>
+    <TodosContext.Provider
+      value={{ todos, setTodos, addTodo, markTodoAsCompleted, deleteTodo }}
+    >
       {props.children}
     </TodosContext.Provider>
   );

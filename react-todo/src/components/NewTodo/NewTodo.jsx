@@ -13,12 +13,23 @@ export default function NewTodo() {
     <div className="newtodo-container">
       <input
         type="text"
-        placeholder="I will buy groceries today"
+        placeholder="What you plan do to?"
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
-        onKeyDown={(e) => e.key === "Enter" && addTodo(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            addTodo(e.target.value);
+            setTodo("");
+          }
+        }}
       />
-      <div className="add-btn" onClick={() => addTodo(todo)}>
+      <div
+        className="add-btn"
+        onClick={() => {
+          addTodo(todo);
+          setTodo("");
+        }}
+      >
         <FontAwesomeIcon icon={faSquarePlus} />
         <span>Add</span>
       </div>
