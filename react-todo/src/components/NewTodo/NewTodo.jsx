@@ -16,6 +16,7 @@ export default function NewTodo() {
         placeholder="I will buy groceries today"
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && addTodo(e.target.value)}
       />
       <div className="add-btn" onClick={() => addTodo(todo)}>
         <FontAwesomeIcon icon={faSquarePlus} />

@@ -10,7 +10,7 @@ import { TodosContext } from "../../TodosContext";
 import "./Todos.css";
 
 export default function Todos() {
-  const { todos } = useContext(TodosContext);
+  const { todos, deleteTodo } = useContext(TodosContext);
 
   return (
     <div className="todos-container">
@@ -22,7 +22,11 @@ export default function Todos() {
           </div>
           <div className="todo-actions-container">
             <FontAwesomeIcon icon={faCheck} size="xs" />
-            <FontAwesomeIcon icon={faTrash} size="xs" />
+            <FontAwesomeIcon
+              icon={faTrash}
+              size="xs"
+              onClick={() => deleteTodo(todo.id)}
+            />
           </div>
         </div>
       ))}

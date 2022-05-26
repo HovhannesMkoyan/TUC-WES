@@ -19,8 +19,11 @@ export default function TodosProvider(props) {
         text: todo,
         completed: false,
       };
+
+      // Update state
       setTodos((prevState) => [...prevState, todoObj]);
 
+      // Update LS
       if (todosInLS) {
         const todosArr = JSON.parse(todosInLS);
         todosArr.push(todoObj);
@@ -29,10 +32,24 @@ export default function TodosProvider(props) {
         localStorage.setItem("todos", JSON.stringify([todoObj]));
       }
     }
-  }
+  };
+
+  const deleteTodo = (id) => {
+    const todosArr = JSON.parse(todosInLS);
+    const indexOfTodo = todosArr.findIndex((todo) => {
+      return todo.id === id;
+    });
+    todosArr.splice(indexOfTodo, 1);
+
+    // Update state
+    setTodos(todosArr);
+
+    // Update LS
+    localStorage.setItem("todos", JSON.stringify(todosArr));
+  };
 
   return (
-    <TodosContext.Provider value={{ todos, setTodos, addTodo }}>
+    <TodosContext.Provider value={{ todos, setTodos, addTodo, deleteTodo }}>
       {props.children}
     </TodosContext.Provider>
   );
