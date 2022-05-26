@@ -15,7 +15,7 @@ export default function Context(props) {
                 todos: JSON.parse(todos),
             });
         }
-    }, [])
+    }, [state])
 
     const providerValue = useMemo(
         () => ({ state, setState }),

@@ -17,7 +17,7 @@
 }
 
 .todo-container:hover {
-    background: rgba(29, 161, 242, 0.17);
+    background: rgb(29 161 242 / 7%);
 }
 
 .todo-container>div:first-child span {
