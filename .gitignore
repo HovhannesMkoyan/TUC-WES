@@ -1,1 +1,3 @@
 node_modules
+svelte-todo/public/build/
+.DS_Store
