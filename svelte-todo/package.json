@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "sirv-cli": "^2.0.0",
-    "svelte-awesome": "^3.0.0"
+    "svelte-fa": "^2.4.0"
   }
 }

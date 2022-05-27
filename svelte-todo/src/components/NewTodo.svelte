@@ -1,12 +1,12 @@
 <script>
-    import Icon from 'svelte-awesome';
-    import { plusSquare } from 'svelte-awesome/icons';
+  import Fa from "svelte-fa";
+  import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 </script>
 
 <div class="newtodo-container">
   <input type="text" placeholder="What you plan do to?" />
   <div class="add-btn">
-    <Icon data={plusSquare} scale={1.4}/>
+    <Fa icon={faSquarePlus} scale={1.38} />
     <span>Add</span>
   </div>
 </div>
@@ -34,7 +34,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 21.5px;
     background: rgba(29, 161, 242, 0.17);
     border-radius: 4px;
     cursor: pointer;
@@ -42,6 +42,6 @@
   }
 
   .add-btn > span {
-    margin-left: 10px;
+    margin-left: 0.75rem;
   }
 </style>

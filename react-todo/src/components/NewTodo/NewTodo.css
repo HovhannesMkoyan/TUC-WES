@@ -29,5 +29,8 @@
 
 .add-btn svg {
     font-size: 22px;
-    margin-right: 10px;
+}
+
+.add-btn > span {
+    margin-left: 0.6rem;
 }

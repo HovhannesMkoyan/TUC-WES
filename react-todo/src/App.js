@@ -16,6 +16,7 @@ function App() {
             <Todos />
           </TodosProvider>
         </div>
+        <p className="made-by">Made by React.js</p>
       </div>
     </div>
   );
