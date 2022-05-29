@@ -55,7 +55,6 @@ export default function TodosProvider(props) {
     });
     todosArr[indexOfTodo].completed = true;
 
-    console.log(todosArr[indexOfTodo]);
     // Update state
     setTodos(todosArr);
 

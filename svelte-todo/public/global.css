@@ -66,3 +66,17 @@
     color: #1ea2f1;
     font-weight: bold;
 }
+
+.todo-actions-container svg {
+    display: flex;
+    font-size: 17px !important;
+    background: rgba(29, 161, 242, 0.17);
+    padding: 7px;
+    cursor: pointer;
+    height: 1.95rem !important;
+    overflow: auto !important;
+}
+
+.todo-actions-container svg:first-child {
+    margin-right: 6px;
+}
