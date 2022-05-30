@@ -14,7 +14,7 @@
         <Todos />
       </div>
       <div class="made-by-container">
-        <p>Made by Svelte</p>
+        <p>Created using Svelte</p>
         <a href="http://localhost:3000">Switch to React.js app</a>
       </div>
     </div>

@@ -2,8 +2,9 @@ import { writable, get } from "svelte/store";
 
 let todosArr = [];
 const todosInLS = localStorage.getItem("todos");
+const parsedTodos = JSON.parse(todosInLS) || [];
 if (todosInLS) {
-  todosArr = JSON.parse(todosInLS);
+  todosArr = parsedTodos;
 }
 
 export const TodosStore = writable(todosArr);
@@ -18,7 +19,7 @@ export const addTodo = (todo) => {
 
     // Update state
     TodosStore.update((prevArr) => {
-      return [...prevArr, todoObj]
+      return [...prevArr, todoObj];
     });
 
     // Update LS
@@ -32,11 +33,10 @@ export const addTodo = (todo) => {
 };
 
 export const deleteTodo = (id) => {
-  const todosArr = JSON.parse(todosInLS);
-  const indexOfTodo = todosArr.findIndex((todo) => {
-    return todo.id === id;
-  });
-  todosArr.splice(indexOfTodo, 1);
+  todosArr.splice(
+    todosArr.findIndex((todo) => todo.id === id),
+    1
+  );
 
   // Update state
   TodosStore.set(todosArr);
@@ -46,7 +46,6 @@ export const deleteTodo = (id) => {
 };
 
 export const markTodoAsCompleted = (id) => {
-  const todosArr = JSON.parse(todosInLS);
   const indexOfTodo = todosArr.findIndex((todo) => {
     return todo.id === id;
   });

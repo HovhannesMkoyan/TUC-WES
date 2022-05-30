@@ -5,7 +5,7 @@
     faCheck,
     faTrash,
   } from "@fortawesome/free-solid-svg-icons";
-  import { TodosStore } from "../stores";
+  import { TodosStore, deleteTodo, markTodoAsCompleted } from "../stores";
 
   let todos = [];
   TodosStore.subscribe((data) => (todos = data));
@@ -22,9 +22,13 @@
       </div>
       <div class="todo-actions-container">
         {#if todo.completed === false}
-          <Fa icon={faCheck} size="10x" />
+          <div on:click={() => markTodoAsCompleted(todo.id)}>
+            <Fa icon={faCheck} size="10x" />
+          </div>
         {/if}
-        <Fa icon={faTrash} size="10x" />
+        <div on:click={() => deleteTodo(todo.id)}>
+          <Fa icon={faTrash} size="10x" />
+        </div>
       </div>
     </div>
   {/each}
