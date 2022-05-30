@@ -13,9 +13,9 @@ export default function TodosProvider(props) {
   }, []);
 
   const addTodo = (todo) => {
-    if (todo) {
+    if (todo.length !== 0) {
       const todoObj = {
-        id: Date.now(),
+        id: Date.now() + Math.floor(Math.random() * 100),
         text: todo,
         completed: false,
       };

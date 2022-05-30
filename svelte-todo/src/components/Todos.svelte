@@ -53,8 +53,13 @@
     background: rgb(29 161 242 / 7%);
   }
 
+  .todo-container > div:first-child {
+    display: flex;
+    align-items: center;
+  }
+
   .todo-container > div:first-child span {
-    margin-left: 6px;
+    margin-left: 10px;
   }
 
   .todo-actions-container {

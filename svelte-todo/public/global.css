@@ -77,6 +77,6 @@
     overflow: auto !important;
 }
 
-.todo-actions-container svg:first-child {
-    margin-right: 6px;
+.todo-actions-container svg:last-child {
+    margin-left: 6px;
 }
