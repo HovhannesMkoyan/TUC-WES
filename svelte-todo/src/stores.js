@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { writable, get } from "svelte/store";
 
 let todosArr = [];
 const todosInLS = localStorage.getItem("todos");
@@ -17,15 +17,16 @@ export const addTodo = (todo) => {
     };
 
     // Update state
-    TodosStore.update((prevArr) => [...prevArr, todoObj]);
+    TodosStore.update((prevArr) => {
+      return [...prevArr, todoObj]
+    });
 
     // Update LS
-    if (todosInLS) {
-      const todosArr = JSON.parse(todosInLS);
+    if (get(TodosStore).length === 0) {
+      localStorage.setItem("todos", JSON.stringify([todoObj]));
+    } else {
       todosArr.push(todoObj);
       localStorage.setItem("todos", JSON.stringify(todosArr));
-    } else {
-      localStorage.setItem("todos", JSON.stringify([todoObj]));
     }
   }
 };

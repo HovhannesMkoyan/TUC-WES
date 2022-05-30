@@ -24,12 +24,12 @@ export default function TodosProvider(props) {
       setTodos((prevState) => [...prevState, todoObj]);
 
       // Update LS
-      if (todosInLS) {
+      if (todos.length === 0) {
+        localStorage.setItem("todos", JSON.stringify([todoObj]));
+      } else {
         const todosArr = JSON.parse(todosInLS);
         todosArr.push(todoObj);
         localStorage.setItem("todos", JSON.stringify(todosArr));
-      } else {
-        localStorage.setItem("todos", JSON.stringify([todoObj]));
       }
     }
   };
