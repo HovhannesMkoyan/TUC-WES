@@ -1,5 +1,5 @@
 <script>
-  import {get} from "svelte/store";
+  import { get } from "svelte/store";
   import Fa from "svelte-fa";
   import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
   import { TodosStore, addTodo } from "../stores";

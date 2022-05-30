@@ -16,7 +16,10 @@ function App() {
             <Todos />
           </TodosProvider>
         </div>
-        <p className="made-by">Made by React.js</p>
+        <div class="made-by-container">
+          <p>Made by React.js</p>
+          <a href="http://localhost:8080">Switch to Svelte app</a>
+        </div>
       </div>
     </div>
   );

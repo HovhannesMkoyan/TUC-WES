@@ -13,7 +13,10 @@
         <NewTodo />
         <Todos />
       </div>
-	  <p class="made-by">Made by Svelte</p>
+      <div class="made-by-container">
+        <p>Made by Svelte</p>
+        <a href="http://localhost:3000">Switch to React.js app</a>
+      </div>
     </div>
   </div>
 </main>
