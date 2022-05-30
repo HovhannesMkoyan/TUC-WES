@@ -29,3 +29,31 @@ export const addTodo = (todo) => {
     }
   }
 };
+
+export const deleteTodo = (id) => {
+  const todosArr = JSON.parse(todosInLS);
+  const indexOfTodo = todosArr.findIndex((todo) => {
+    return todo.id === id;
+  });
+  todosArr.splice(indexOfTodo, 1);
+
+  // Update state
+  TodosStore.set(todosArr);
+
+  // Update LS
+  localStorage.setItem("todos", JSON.stringify(todosArr));
+};
+
+export const markTodoAsCompleted = (id) => {
+  const todosArr = JSON.parse(todosInLS);
+  const indexOfTodo = todosArr.findIndex((todo) => {
+    return todo.id === id;
+  });
+  todosArr[indexOfTodo].completed = true;
+
+  // Update state
+  TodosStore.set(todosArr);
+
+  // Update LS
+  localStorage.setItem("todos", JSON.stringify(todosArr));
+};

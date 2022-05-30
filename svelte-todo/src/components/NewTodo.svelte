@@ -1,15 +1,30 @@
 <script>
-  import { get } from "svelte/store";
   import Fa from "svelte-fa";
   import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
-  import { TodosStore, addTodo } from "../stores";
+  import { addTodo } from "../stores";
 
   let todo = "";
 </script>
 
 <div class="newtodo-container">
-  <input type="text" placeholder="What you plan do to?" bind:value={todo} />
-  <div class="add-btn" on:click={() => addTodo(todo)}>
+  <input
+    type="text"
+    placeholder="What you plan do to?"
+    bind:value={todo}
+    on:keydown={(e) => {
+      if (e.key === "Enter") {
+        addTodo(e.target.value);
+        todo = "";
+      }
+    }}
+  />
+  <div
+    class="add-btn"
+    on:click={() => {
+      addTodo(todo);
+      todo = "";
+    }}
+  >
     <Fa icon={faSquarePlus} scale={1.38} />
     <span>Add</span>
   </div>
