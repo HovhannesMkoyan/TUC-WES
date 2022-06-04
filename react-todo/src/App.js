@@ -2,6 +2,9 @@ import NewTodo from "./components/NewTodo/NewTodo";
 import Todos from "./components/Todos/Todos";
 import TodosProvider from "./TodosContext";
 import "./App.css";
+import AdditionTesting from "./components/Tests/AdditionTesting";
+import UpdateTesting from "./components/Tests/UpdateTesting";
+import RemovalTesting from "./components/Tests/RemovalTesting";
 
 function App() {
   return (
@@ -14,9 +17,14 @@ function App() {
           <TodosProvider>
             <NewTodo />
             <Todos />
+            <div className="tests-container">
+              <AdditionTesting />
+              <UpdateTesting />
+              <RemovalTesting />
+            </div>
           </TodosProvider>
         </div>
-        <div class="made-by-container">
+        <div className="made-by-container">
           <p>Created using React.js</p>
           <a href="http://localhost:8080">Switch to Svelte app</a>
         </div>

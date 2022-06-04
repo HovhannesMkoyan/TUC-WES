@@ -37,7 +37,9 @@
 <style>
   .todos-container {
     width: 77%;
-    margin-top: 30px;
+    height: 270px;
+    margin: 50px 0;
+    overflow: auto;
   }
 
   .todo-container {
