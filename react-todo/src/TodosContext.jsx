@@ -62,8 +62,8 @@ export default function TodosProvider(props) {
     localStorage.setItem("todos", JSON.stringify(todosArr));
   };
 
-  const additionTest = () => {
-    for (let run = 1; run <= 100; run++) {
+  const additionTest = async () => {
+    for (let run = 1; run <= 200; run++) {
       const todoObj = {
         id: Date.now() + Math.floor(Math.random() * 100),
         text: `Adding ${run}`,
@@ -72,15 +72,6 @@ export default function TodosProvider(props) {
   
       // Update state
       setTodos((prevState) => [...prevState, todoObj]);
-  
-      // Update LS
-      if (todos.length === 0) {
-        localStorage.setItem("todos", JSON.stringify([todoObj]));
-      } else {
-        const todosArr = JSON.parse(todosInLS);
-        todosArr.push(todoObj);
-        localStorage.setItem("todos", JSON.stringify(todosArr));
-      }
     }
     
   };

@@ -4,3 +4,15 @@
     width: 100%;
     margin-bottom: 50px;
 }
+
+.single-test-container {
+    padding: 7px 10px;
+    background-color: #C3E6FA;
+    color: #1ca3f1;
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
