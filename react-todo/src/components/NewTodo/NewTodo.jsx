@@ -13,7 +13,7 @@ export default function NewTodo() {
     <div className="newtodo-container">
       <input
         type="text"
-        placeholder="What you plan do to?"
+        placeholder="What you plan to do?"
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
         onKeyDown={(e) => {

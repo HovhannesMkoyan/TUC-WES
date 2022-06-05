@@ -9,7 +9,7 @@
 <div class="newtodo-container">
   <input
     type="text"
-    placeholder="What you plan do to?"
+    placeholder="What you plan to do?"
     bind:value={todo}
     on:keydown={(e) => {
       if (e.key === "Enter") {
