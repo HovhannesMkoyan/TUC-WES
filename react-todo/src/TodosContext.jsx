@@ -65,7 +65,7 @@ export default function TodosProvider(props) {
   const addTest = async () => {
     return new Promise((resolve, _) => {
       let arr = [];
-      for (let run = 1; run <= 100; run++) {
+      for (let run = 1; run <= 10000; run++) {
         const todoObj = {
           id: Date.now() + Math.floor(Math.random() * 100),
           text: `Todo # ${run}`,
@@ -93,11 +93,9 @@ export default function TodosProvider(props) {
 
   const removeTest = async (todos) => {
     return new Promise((resolve, _) => {
-      do {
-        todos.splice(0, 1);
-      } while (todos.length !== 0);
+      const emptyArr = todos.filter((todo) => !todo);
 
-      setTodos([]);
+      setTodos(emptyArr);
       resolve();
     });
   };
