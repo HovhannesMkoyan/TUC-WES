@@ -1,5 +1,8 @@
 <script>
-  import { addTest } from "../../stores";
+  import { TodosStore, removeTest } from "../../stores";
+
+  let todos = [];
+  TodosStore.subscribe((data) => (todos = data));
 
   let timeStart,
     timeEnd,
@@ -11,16 +14,16 @@
     class="single-test-container {testCompleted ? 'test-disabled' : ''}"
     on:click={() => {
       timeStart = window.performance.now();
-      addTest().then(() => {
+      removeTest(todos).then(() => {
         timeEnd = window.performance.now();
         testCompleted = true;
       });
     }}
   >
     {#if testCompleted}
-      Additon completed
+      Removal completed
     {:else}
-      Add 10.000 todos
+      Remove all todos
     {/if}
   </div>
 

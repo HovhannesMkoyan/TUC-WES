@@ -71,11 +71,28 @@ export const addTest = async () => {
       arr.push(todoObj);
     }
 
-    // TodosStore.update((prevArr) => {
-    //   return [...prevArr, todoObj];
-    // });
-    TodosStore.set(arr);
+    TodosStore.update(() => arr);
 
+    resolve();
+  });
+};
+
+export const updateTest = async (todos) => {
+  return new Promise((resolve, _) => {
+    const updated = todos.map((todo) =>
+      Object.assign(todo, { text: `Updated ${todo.text}` })
+    );
+    TodosStore.update(() => updated);
+
+    resolve();
+  });
+};
+
+export const removeTest = async (todos) => {
+  return new Promise((resolve, _) => {
+    const emptyArr = todos.filter((todo) => !todo);
+
+    TodosStore.update(() => emptyArr);
     resolve();
   });
 };

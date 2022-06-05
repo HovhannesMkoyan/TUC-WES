@@ -2,6 +2,8 @@
   import NewTodo from "./components/NewTodo.svelte";
   import Todos from "./components/Todos.svelte";
   import AdditionTesting from "./components/Tests/AdditionTesting.svelte";
+  import UpdateTesting from "./components/Tests/UpdateTesting.svelte";
+  import RemovalTesting from "./components/Tests/RemovalTesting.svelte";
 </script>
 
 <main>
@@ -15,8 +17,8 @@
         <Todos />
         <div class="tests-container">
           <AdditionTesting />
-          <!-- <UpdateTesting />
-          <RemovalTesting /> -->
+          <UpdateTesting />
+          <RemovalTesting />
         </div>
       </div>
       <div class="made-by-container">

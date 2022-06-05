@@ -12,7 +12,7 @@
 </script>
 
 <div class="todos-container">
-  {#each todos as todo (todo.id)}
+  {#each todos as todo}
     <div class="todo-container">
       <div>
         <Fa icon={faSquareFull} size="xs" />
