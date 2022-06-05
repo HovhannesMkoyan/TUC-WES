@@ -11,14 +11,13 @@ export default function AdditionTesting() {
   return (
     <div>
       <div
-       className="single-test-container"
-        onClick={async () => {
+        className="single-test-container"
+        onClick={() => {
           setTimeStart(performance.now());
           additionTest().then(() => {
-            setTimeEnd(performance.now())
+            setTimeEnd(performance.now());
           });
         }}
-       
       >
         Add 10.000 todos
       </div>
