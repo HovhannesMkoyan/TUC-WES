@@ -86,3 +86,11 @@
 .todo-actions-container svg:last-child {
     margin-left: 6px;
 }
+
+.tests-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 65px;
+    margin-bottom: 50px;
+  }

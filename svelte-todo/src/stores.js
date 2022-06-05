@@ -57,3 +57,25 @@ export const markTodoAsCompleted = (id) => {
   // Update LS
   localStorage.setItem("todos", JSON.stringify(todosArr));
 };
+
+export const addTest = async () => {
+  return new Promise((resolve, _) => {
+    let arr = [];
+    for (let run = 1; run <= 10000; run++) {
+      const todoObj = {
+        id: Date.now() + Math.floor(Math.random() * 100),
+        text: `Todo # ${run}`,
+        completed: false,
+      };
+
+      arr.push(todoObj);
+    }
+
+    // TodosStore.update((prevArr) => {
+    //   return [...prevArr, todoObj];
+    // });
+    TodosStore.set(arr);
+
+    resolve();
+  });
+};

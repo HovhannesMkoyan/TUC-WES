@@ -1,6 +1,7 @@
 <script>
   import NewTodo from "./components/NewTodo.svelte";
   import Todos from "./components/Todos.svelte";
+  import AdditionTesting from "./components/Tests/AdditionTesting.svelte";
 </script>
 
 <main>
@@ -12,6 +13,11 @@
       <div class="container-body">
         <NewTodo />
         <Todos />
+        <div class="tests-container">
+          <AdditionTesting />
+          <!-- <UpdateTesting />
+          <RemovalTesting /> -->
+        </div>
       </div>
       <div class="made-by-container">
         <p>Created using Svelte</p>
