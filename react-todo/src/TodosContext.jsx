@@ -63,22 +63,34 @@ export default function TodosProvider(props) {
   };
 
   const additionTest = async () => {
-    for (let run = 1; run <= 200; run++) {
+    return new Promise((resolve, reject) => {
+      let arr = [];
+    for (let run = 1; run <= 5000; run++) {
       const todoObj = {
         id: Date.now() + Math.floor(Math.random() * 100),
         text: `Adding ${run}`,
         completed: false,
       };
-  
+
+      arr.push(todoObj);
       // Update state
-      setTodos((prevState) => [...prevState, todoObj]);
     }
-    
+    setTodos(arr);
+
+    resolve()
+    })
   };
 
   return (
     <TodosContext.Provider
-      value={{ todos, setTodos, addTodo, markTodoAsCompleted, deleteTodo, additionTest }}
+      value={{
+        todos,
+        setTodos,
+        addTodo,
+        markTodoAsCompleted,
+        deleteTodo,
+        additionTest,
+      }}
     >
       {props.children}
     </TodosContext.Provider>
