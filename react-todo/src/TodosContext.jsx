@@ -82,7 +82,9 @@ export default function TodosProvider(props) {
 
   const updateTest = async (todos) => {
     return new Promise((resolve, _) => {
-      const updated = todos.map(todo => Object.assign(todo, {text: `Updated ${todo.text}`}))
+      const updated = todos.map((todo) =>
+        Object.assign(todo, { text: `Updated ${todo.text}` })
+      );
       setTodos(updated);
 
       resolve();
@@ -93,9 +95,9 @@ export default function TodosProvider(props) {
     return new Promise((resolve, _) => {
       do {
         todos.splice(0, 1);
-       } while (todos.length !== 0);
+      } while (todos.length !== 0);
 
-       setTodos([]);
+      setTodos([]);
       resolve();
     });
   };
@@ -110,7 +112,7 @@ export default function TodosProvider(props) {
         deleteTodo,
         addTest,
         updateTest,
-        removeTest
+        removeTest,
       }}
     >
       {props.children}

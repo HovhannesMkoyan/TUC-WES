@@ -7,19 +7,23 @@ export default function UpdateTesting() {
   const { todos, updateTest } = useContext(TodosContext);
   const [timeStart, setTimeStart] = useState();
   const [timeEnd, setTimeEnd] = useState();
+  const [testCompleted, setTestCompleted] = useState(false);
 
   return (
     <div>
       <div
-        className="single-test-container"
+        className={`single-test-container ${
+          testCompleted ? "test-disabled" : ""
+        }`}
         onClick={() => {
           setTimeStart(performance.now());
           updateTest(todos).then(() => {
             setTimeEnd(performance.now());
+            setTestCompleted(true);
           });
         }}
       >
-        Update all todos
+        {testCompleted ? "Update completed" : "Update all todos"}
       </div>
       {timeStart && timeEnd && (
         <p style={{ textAlign: "center" }}>
