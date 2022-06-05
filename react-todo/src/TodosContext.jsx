@@ -62,10 +62,10 @@ export default function TodosProvider(props) {
     localStorage.setItem("todos", JSON.stringify(todosArr));
   };
 
-  const additionTest = async () => {
-    return new Promise((resolve, reject) => {
+  const addTest = async () => {
+    return new Promise((resolve, _) => {
       let arr = [];
-      for (let run = 1; run <= 10000; run++) {
+      for (let run = 1; run <= 100; run++) {
         const todoObj = {
           id: Date.now() + Math.floor(Math.random() * 100),
           text: `Todo # ${run}`,
@@ -80,6 +80,26 @@ export default function TodosProvider(props) {
     });
   };
 
+  const updateTest = async (todos) => {
+    return new Promise((resolve, _) => {
+      const updated = todos.map(todo => Object.assign(todo, {text: `Updated ${todo.text}`}))
+      setTodos(updated);
+
+      resolve();
+    });
+  };
+
+  const removeTest = async (todos) => {
+    return new Promise((resolve, _) => {
+      do {
+        todos.splice(0, 1);
+       } while (todos.length !== 0);
+
+       setTodos([]);
+      resolve();
+    });
+  };
+
   return (
     <TodosContext.Provider
       value={{
@@ -88,7 +108,9 @@ export default function TodosProvider(props) {
         addTodo,
         markTodoAsCompleted,
         deleteTodo,
-        additionTest,
+        addTest,
+        updateTest,
+        removeTest
       }}
     >
       {props.children}

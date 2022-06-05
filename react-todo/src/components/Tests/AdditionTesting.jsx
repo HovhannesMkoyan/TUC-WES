@@ -1,10 +1,10 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 
 import { TodosContext } from "../../TodosContext";
 import "./Testing.css";
 
 export default function AdditionTesting() {
-  const { additionTest } = useContext(TodosContext);
+  const { addTest } = useContext(TodosContext);
   const [timeStart, setTimeStart] = useState();
   const [timeEnd, setTimeEnd] = useState();
 
@@ -14,7 +14,7 @@ export default function AdditionTesting() {
         className="single-test-container"
         onClick={() => {
           setTimeStart(performance.now());
-          additionTest().then(() => {
+          addTest().then(() => {
             setTimeEnd(performance.now());
           });
         }}
