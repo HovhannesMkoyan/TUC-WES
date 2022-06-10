@@ -1,3 +1,4 @@
 node_modules
 svelte-todo/public/build/
+react-todo/build
 .DS_Store

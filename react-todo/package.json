@@ -7,25 +7,27 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "prettier": "^2.6.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "prettier": "npx prettier 'src/**/*.{js,jsx}' --write"
+    "prettier": "npx prettier 'src/**/*.{js,jsx}' --write",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "analyze-1": "node analyze.js"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2",
+    "source-map-explorer": "^2.5.2",
+    "webpack-bundle-analyzer": "^4.5.0"
   },
   "browserslist": {
     "production": [
