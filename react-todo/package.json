@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "react": "^18.1.0",
@@ -15,8 +14,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "prettier": "npx prettier 'src/**/*.{js,jsx}' --write",
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "analyze-1": "node analyze.js"
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": [
@@ -26,8 +24,7 @@
   },
   "devDependencies": {
     "prettier": "^2.6.2",
-    "source-map-explorer": "^2.5.2",
-    "webpack-bundle-analyzer": "^4.5.0"
+    "source-map-explorer": "^2.5.2"
   },
   "browserslist": {
     "production": [
