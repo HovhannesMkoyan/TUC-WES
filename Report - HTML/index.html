@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <h2>Seminar Web Engineering im Sommersemester 2022</h2>
+        <h2>Seminar Web Engineering in Sommersemester 2022</h2>
         <h1>Comparison of the Frontend Frameworks Vue, React and Svelte</h1>
         <h2 class="author">Hovhannes Mkoyan, Zohaib Arshad</h2>
         <h3 class="affiliation">
@@ -76,7 +76,7 @@
         <figure>
             <img src="framework-vs-library.png" alt="Framework vs Library" />
             <figcaption>
-                <strong>Figure 1</strong>: Difference between a library and a framework <a href="#r10">[10]</a>.
+                <strong>Figure 1</strong>: Difference between a library and a framework <a href="#r7">[7]</a>.
             </figcaption>
         </figure>
     </section>
@@ -103,9 +103,9 @@
             Props are used to pass data from one component to another (from a parent component to a child component).
         </p>
         <figure>
-            <img src="props.png" alt="Props & State" />
+            <img src="state-vs-props.png" alt="Props & State" />
             <figcaption>
-                <strong>Figure 2</strong>: Props and state <a href="#r10">[10]</a>.
+                <strong>Figure 2</strong>: Props and state <a href="#r11">[11]</a>.
             </figcaption>
         </figure>
         <p>In addition, every component has "lifecycle methods." They specify the behavior of a component when it
@@ -119,7 +119,7 @@
             and synchronized with the "real" DOM. This process is called reconciliation. This approach enables the
             declarative API of React, which means we tell React what state we want the UI to be in, and it makes sure
             the DOM matches that state. This abstracts out the attribute manipulation, event handling, and manual DOM
-            updating that we would otherwise have to use to build our application <a href="#r5">[5]</a>.
+            updating that we would otherwise have to use to build our application <a href="#r8">[8]</a>.
         </p>
         <p>
             The two React ingredients, state, and props, mean we can organize our components in a hierarchical structure
@@ -176,7 +176,7 @@
                 the risk of clashing with other components' styles.
             </li>
             <li>It extends JavaScript by reinterpreting specific language directives to achieve true reactivity and ease
-                component state management <a href="#r6">[6]</a>.
+                component state management <a href="#r9">[9]</a>.
             </li>
         </ul>
         <p>Svelte compiles the code, so it does not have to use a virtual DOM, bringing some performance improvements.
@@ -185,8 +185,8 @@
             watches for components that depend on variables, and then updates those components as the variables change.
             This way, Svelte is reactive without relying on a third-party API.
         </p>
-        <p>Below are two snippets of React and Svelte code. Of course, the snippets' result is the same, but as we can
-            see, Svelte code is much easier to understand.
+        <p>Below are two snippets of React and Svelte code. Of course, the snippets' result is the same, but clearly,
+            Svelte code is much easier to understand.
         </p>
         <figure>
             <pre><code>
@@ -242,7 +242,7 @@
                 </code>
             </pre>
             <figcaption>
-                <strong>Figure 6</strong>: Demo single todo element HTML structure.
+                <strong>Figure 6</strong>: Single todo HTML element structure.
             </figcaption>
         </figure>
         <p>In the addition test, Svelte has the fastest performance. However, the performance difference with React is
@@ -253,6 +253,12 @@
             Svelte had the same similar performance
             in his test as in our case; however, React was slightly faster than Svelte.
         </p>
+        <figure>
+            <img src="demo - addition test.png" alt="Addition results" />
+            <figcaption>
+                <strong>Figure 7</strong>: Addition results (in milliseconds).
+            </figcaption>
+        </figure>
         <p>The second benchmark phase is the DOM updating performance; an update of 10000 elements previously added
             to the DOM was performed. Specifically, the time to change all todos text has been calculated. Here, the
             situation is different compared to the previous benchmark. We can see that Vue.js is almost two times
@@ -260,14 +266,26 @@
             average. Svelte performs this fast in Levln’s update test too, but only when updating a single todo.
             However, when updating all the 10000 elements, React, and Vue.js produce the best results.
         </p>
+        <figure>
+            <img src="demo - updating.png" alt="Updating results" />
+            <figcaption>
+                <strong>Figure 8</strong>: Updating results (in milliseconds).
+            </figcaption>
+        </figure>
         <p>In the third benchmark phase, a DOM removal operation was performed, removing 10,000
             &lt;div> elements with all the content.
             In this benchmark, React had the fastest performance, at 315 milliseconds, while Vue.js and Svelte
             showed relatively slow performance, at an average of 478 and 462 milliseconds, аccordingly.
         </p>
+        <figure>
+            <img src="demo - removal.png" alt="Removal results" />
+            <figcaption>
+                <strong>Figure 9</strong>: Removal results (in milliseconds).
+            </figcaption>
+        </figure>
         <p>To conclude, for the above specific tests, for the given technology versions and the environment,
             React was the fastest technology in one of the three tests (when removing) and the slowest when
-            updating. On the other hand, svelte was the fastest in two tests when adding and updating.
+            updating. On the other hand, Svelte was the fastest in two tests when adding and updating.
             Furthermore, although Vue.js is two times faster than React when updating, it showed the worst
             results in adding and removal tests.
         </p>
@@ -284,28 +302,31 @@
         </p>
         <p class="reference" id="r4">[4] React Docs. [Online]. Available: <a
                 href="https://reactjs.org/docs/getting-started.html">https://reactjs.org/docs/getting-started.html</a>
-            (25.06.2022)</p>
+            (18.06.2022)</p>
         <p class="reference" id="r5">[5] Svelte Docs. [Online]. Available: <a
                 href="https://svelte.dev/docs">https://svelte.dev/docs</a>
-            (25.06.2022)</p>
+            (18.06.2022)</p>
         <p class="reference" id="r6">[6] Vue Js Guide. [Online]. Available: <a
                 href="https://v2.vuejs.org/v2/guide/">https://v2.vuejs.org/v2/guide/</a>
-            (27.06.2022)</p>
+            (23.06.2022)</p>
         <p class="reference" id="r7">[7] Ledion S. (2015, April). What's the difference between a library and a
             framework? [Online]. Available: <a
                 href="https://www.linkedin.com/pulse/whats-difference-between-library-framework-ledion-spaho/">https://www.linkedin.com/pulse/whats-difference-between-library-framework-ledion-spaho/</a>
             (27.06.2022)</p>
         <p class="reference" id="r8">[8] Virtual DOM and Internals [Online]. Available <a
                 href="https://reactjs.org/docs/faq-internals.html">https://reactjs.org/docs/faq-internals.html</a>
-            (27.06.2022)
+            (22.06.2022)
         </p>
         <p class="reference" id="r9">[9] Getting started with Svelte. [Online]. Available: <a
                 href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Svelte_getting_started">https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Svelte_getting_started</a>
-            (27.06.2022)
+            (22.06.2022)
         </p>
         <p class="reference" id="r10">[10] Aadyaa M. (2021). Introduction to React. SE-EDU. [Online]. Available: <a
                 href="https://se-education.org/learningresources/contents/javascript/Javascript-framework-React.html">https://se-education.org/learningresources/contents/javascript/Javascript-framework-React.html</a>
             (20.06.2022)</p>
+        <p class="reference" id="r11">[11] React States. [Online]. Available: <a
+                href="https://www.c-sharpcorner.com/article/react-states-day-six/">https://www.c-sharpcorner.com/article/react-states-day-six/</a>
+            (30.06.2022)</p>
     </section>
 </body>
 
